@@ -48,6 +48,28 @@ function deserialize_reminders_DeleteReminderResponse(buffer_arg) {
   return services_reminders_messages_pb.DeleteReminderResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_reminders_GetUserRemindersRequest(arg) {
+  if (!(arg instanceof services_reminders_messages_pb.GetUserRemindersRequest)) {
+    throw new Error('Expected argument of type reminders.GetUserRemindersRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_reminders_GetUserRemindersRequest(buffer_arg) {
+  return services_reminders_messages_pb.GetUserRemindersRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_reminders_GetUserRemindersResponse(arg) {
+  if (!(arg instanceof services_reminders_messages_pb.GetUserRemindersResponse)) {
+    throw new Error('Expected argument of type reminders.GetUserRemindersResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_reminders_GetUserRemindersResponse(buffer_arg) {
+  return services_reminders_messages_pb.GetUserRemindersResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_reminders_UpdateReminderRequest(arg) {
   if (!(arg instanceof services_reminders_messages_pb.UpdateReminderRequest)) {
     throw new Error('Expected argument of type reminders.UpdateReminderRequest');
@@ -105,6 +127,17 @@ var ReminderAPIService = exports.ReminderAPIService = {
     requestDeserialize: deserialize_reminders_DeleteReminderRequest,
     responseSerialize: serialize_reminders_DeleteReminderResponse,
     responseDeserialize: deserialize_reminders_DeleteReminderResponse,
+  },
+  getUserReminders: {
+    path: '/reminders.ReminderAPI/GetUserReminders',
+    requestStream: false,
+    responseStream: false,
+    requestType: services_reminders_messages_pb.GetUserRemindersRequest,
+    responseType: services_reminders_messages_pb.GetUserRemindersResponse,
+    requestSerialize: serialize_reminders_GetUserRemindersRequest,
+    requestDeserialize: deserialize_reminders_GetUserRemindersRequest,
+    responseSerialize: serialize_reminders_GetUserRemindersResponse,
+    responseDeserialize: deserialize_reminders_GetUserRemindersResponse,
   },
 };
 

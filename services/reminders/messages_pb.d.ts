@@ -3,7 +3,7 @@
 
 import * as jspb from "google-protobuf";
 
-export class AddReminderRequest extends jspb.Message {
+export class Reminder extends jspb.Message {
   getUserId(): string;
   setUserId(value: string): void;
 
@@ -12,6 +12,30 @@ export class AddReminderRequest extends jspb.Message {
 
   getDatetime(): string;
   setDatetime(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): Reminder.AsObject;
+  static toObject(includeInstance: boolean, msg: Reminder): Reminder.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: Reminder, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): Reminder;
+  static deserializeBinaryFromReader(message: Reminder, reader: jspb.BinaryReader): Reminder;
+}
+
+export namespace Reminder {
+  export type AsObject = {
+    userId: string,
+    noteId: string,
+    datetime: string,
+  }
+}
+
+export class AddReminderRequest extends jspb.Message {
+  hasReminder(): boolean;
+  clearReminder(): void;
+  getReminder(): Reminder | undefined;
+  setReminder(value?: Reminder): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AddReminderRequest.AsObject;
@@ -25,21 +49,15 @@ export class AddReminderRequest extends jspb.Message {
 
 export namespace AddReminderRequest {
   export type AsObject = {
-    userId: string,
-    noteId: string,
-    datetime: string,
+    reminder?: Reminder.AsObject,
   }
 }
 
 export class UpdateReminderRequest extends jspb.Message {
-  getUserId(): string;
-  setUserId(value: string): void;
-
-  getNoteId(): string;
-  setNoteId(value: string): void;
-
-  getDatetime(): string;
-  setDatetime(value: string): void;
+  hasReminder(): boolean;
+  clearReminder(): void;
+  getReminder(): Reminder | undefined;
+  setReminder(value?: Reminder): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): UpdateReminderRequest.AsObject;
@@ -53,9 +71,7 @@ export class UpdateReminderRequest extends jspb.Message {
 
 export namespace UpdateReminderRequest {
   export type AsObject = {
-    userId: string,
-    noteId: string,
-    datetime: string,
+    reminder?: Reminder.AsObject,
   }
 }
 
@@ -80,6 +96,26 @@ export namespace DeleteReminderRequest {
   export type AsObject = {
     userId: string,
     noteId: string,
+  }
+}
+
+export class GetUserRemindersRequest extends jspb.Message {
+  getUserId(): string;
+  setUserId(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetUserRemindersRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: GetUserRemindersRequest): GetUserRemindersRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GetUserRemindersRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetUserRemindersRequest;
+  static deserializeBinaryFromReader(message: GetUserRemindersRequest, reader: jspb.BinaryReader): GetUserRemindersRequest;
+}
+
+export namespace GetUserRemindersRequest {
+  export type AsObject = {
+    userId: string,
   }
 }
 
@@ -128,6 +164,28 @@ export class DeleteReminderResponse extends jspb.Message {
 
 export namespace DeleteReminderResponse {
   export type AsObject = {
+  }
+}
+
+export class GetUserRemindersResponse extends jspb.Message {
+  clearReminderList(): void;
+  getReminderList(): Array<Reminder>;
+  setReminderList(value: Array<Reminder>): void;
+  addReminder(value?: Reminder, index?: number): Reminder;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetUserRemindersResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: GetUserRemindersResponse): GetUserRemindersResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GetUserRemindersResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetUserRemindersResponse;
+  static deserializeBinaryFromReader(message: GetUserRemindersResponse, reader: jspb.BinaryReader): GetUserRemindersResponse;
+}
+
+export namespace GetUserRemindersResponse {
+  export type AsObject = {
+    reminderList: Array<Reminder.AsObject>,
   }
 }
 

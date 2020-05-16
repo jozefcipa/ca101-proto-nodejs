@@ -11,6 +11,7 @@ interface IReminderAPIService extends grpc.ServiceDefinition<grpc.UntypedService
   addReminder: grpc.MethodDefinition<services_reminders_messages_pb.AddReminderRequest, services_reminders_messages_pb.AddReminderResponse>;
   updateReminder: grpc.MethodDefinition<services_reminders_messages_pb.UpdateReminderRequest, services_reminders_messages_pb.UpdateReminderResponse>;
   deleteReminder: grpc.MethodDefinition<services_reminders_messages_pb.DeleteReminderRequest, services_reminders_messages_pb.DeleteReminderResponse>;
+  getUserReminders: grpc.MethodDefinition<services_reminders_messages_pb.GetUserRemindersRequest, services_reminders_messages_pb.GetUserRemindersResponse>;
 }
 
 export const ReminderAPIService: IReminderAPIService;
@@ -26,4 +27,7 @@ export class ReminderAPIClient extends grpc.Client {
   deleteReminder(argument: services_reminders_messages_pb.DeleteReminderRequest, callback: grpc.requestCallback<services_reminders_messages_pb.DeleteReminderResponse>): grpc.ClientUnaryCall;
   deleteReminder(argument: services_reminders_messages_pb.DeleteReminderRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<services_reminders_messages_pb.DeleteReminderResponse>): grpc.ClientUnaryCall;
   deleteReminder(argument: services_reminders_messages_pb.DeleteReminderRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<services_reminders_messages_pb.DeleteReminderResponse>): grpc.ClientUnaryCall;
+  getUserReminders(argument: services_reminders_messages_pb.GetUserRemindersRequest, callback: grpc.requestCallback<services_reminders_messages_pb.GetUserRemindersResponse>): grpc.ClientUnaryCall;
+  getUserReminders(argument: services_reminders_messages_pb.GetUserRemindersRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<services_reminders_messages_pb.GetUserRemindersResponse>): grpc.ClientUnaryCall;
+  getUserReminders(argument: services_reminders_messages_pb.GetUserRemindersRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<services_reminders_messages_pb.GetUserRemindersResponse>): grpc.ClientUnaryCall;
 }

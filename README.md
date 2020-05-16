@@ -1,3 +1,17 @@
+## [1.2.1](https://github.com/jozefcipa/ca101-proto/compare/v1.2.0...v1.2.1) (2020-05-16)
+
+
+### Bug Fixes
+
+* **reminders:** wrong return type for GetUsersReminders ([abb5a1f](https://github.com/jozefcipa/ca101-proto/commit/abb5a1f54d6bf3c69fc30175f630f2346bf71f9e))
+
+# [1.2.0](https://github.com/jozefcipa/ca101-proto/compare/v1.1.0...v1.2.0) (2020-05-16)
+
+
+### Features
+
+* **reminders:** add GetUserReminders ([94045f0](https://github.com/jozefcipa/ca101-proto/commit/94045f07ce0f10623e20858a6df8bb5eb21a8480))
+
 # [1.1.0](https://github.com/jozefcipa/ca101-proto/compare/v1.0.0...v1.1.0) (2020-05-15)
 
 
